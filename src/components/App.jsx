@@ -1,7 +1,14 @@
+import { BrowserRouter } from 'react-router-dom';
+import Header from './header/Header';
+import RouteSwitch from './RouteSwitch';
+
 function App() {
   return (
     <div>
-      <h1>hello</h1>
+      <BrowserRouter>
+        <Header />
+        <RouteSwitch />
+      </BrowserRouter>
     </div>
   );
 }
