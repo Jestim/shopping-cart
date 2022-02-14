@@ -1,7 +1,7 @@
 {
     "singleQuote": true,
     "jsxBracketSameLine": false,
-    "useTabs": true,
+    "useTabs": false,
     "eslintIntegration": false,
     "tslintIntegration": true,
     "requireConfig": false,
@@ -11,7 +11,7 @@
     "embeddedLanguageFormatting": "auto",
     "htmlWhitespaceSensitivity": "css",
     "insertPragma": false,
-    "jsxSingleQuote": true,
+    "jsxSingleQuote": false,
     "tsxSingleQuote": true,
     "printWidth": 80,
     "proseWrap": "preserve",

@@ -1,0 +1,22 @@
+.shop {
+    margin: 2rem auto;
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    width: 30%;
+    height: auto;
+    margin: 3rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-img {
+    width: 100%;
+    height: 100%;
+}

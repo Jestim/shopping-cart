@@ -1,0 +1,34 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem 3rem 1rem 3rem;
+    border-bottom: solid 1px black;
+}
+
+.header-text {
+    margin-bottom: 1rem;
+}
+
+.header-links {
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.link {
+    font-size: large;
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+}
+
+.cart-icon {
+    font-size: 1.5rem;
+}
+
+.cart-icon-badge {
+    font-size: 1rem;
+    position: relative;
+    bottom: 20px;
+}
