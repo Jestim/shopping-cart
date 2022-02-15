@@ -5,7 +5,11 @@ function Shop({ handleAddToCart }) {
   return (
     <div className="shop">
       {products.map((product) => (
-        <div className="product-card" key={product.id}>
+        <div
+          className="product-card"
+          key={product.id}
+          data-testid={`product-${product.id}`}
+        >
           <img className="product-img" src={product.img} alt={product.name} />
           <p className="product-name">
             {product.name.charAt(0).toUpperCase() + product.name.slice(1)}
@@ -13,7 +17,7 @@ function Shop({ handleAddToCart }) {
           <p className="prudct-price">${product.price}</p>
           <button
             className="add-to-cart-button"
-            onClick={handleAddToCart}
+            onClick={() => handleAddToCart(product)}
             type="button"
           >
             Add to cart
