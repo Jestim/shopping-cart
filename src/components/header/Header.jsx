@@ -14,7 +14,7 @@ function Header({ cartItemsLength }) {
           Shop
         </Link>
         <Link className="link" to="/cart">
-          <div className="cart">
+          <div className="cart-link">
             <FiShoppingCart className="cart-icon" />
             <span className="cart-icon-badge" data-testid="cart-icon-badge">
               {cartItemsLength}
