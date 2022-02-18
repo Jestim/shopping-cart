@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import { cloneDeep } from 'lodash';
+import { useState } from 'react';
+import { cloneDeep, toInteger } from 'lodash';
 import Header from './components/header/Header';
 import Home from './components/Home/Home';
 import Shop from './components/Shop/Shop';
@@ -10,31 +10,25 @@ import './app.css';
 function App() {
   const [cartItems, setCartItems] = useState([]);
 
-  // useEffect(() => {
-  //   console.log(cartItems);
-  // }, [cartItems]);
-
-  const handleAddToCart = (product) => {
-    console.log('handleAddToCart called');
+  const handleAddToCart = (product, quantityInput) => {
+    const quantity = toInteger(quantityInput);
 
     const cartItemsUpdated = cloneDeep(cartItems);
 
     for (let i = 0; i < cartItemsUpdated.length; i += 1) {
       if (cartItemsUpdated[i].id === product.id) {
-        cartItemsUpdated[i].quantity += 1;
+        cartItemsUpdated[i].quantity += quantity;
         setCartItems(cartItemsUpdated);
         return;
       }
     }
 
     const addedProduct = cloneDeep(product);
-    addedProduct.quantity = 1;
+    addedProduct.quantity += quantity;
     setCartItems([...cartItems, addedProduct]);
   };
 
   const handleIncreseItemQuantity = (product) => {
-    console.log('handleIncreseItemQuantity called');
-
     const cartItemsUpdated = cloneDeep(cartItems);
 
     for (let i = 0; i < cartItemsUpdated.length; i += 1) {
@@ -47,9 +41,8 @@ function App() {
   };
 
   const handleDecreseItemQuantity = (product) => {
-    console.log('handleDecreseItemQuantity called');
-
     if (product.quantity === 1) {
+      handleRemoveItem(product);
       return;
     }
 
@@ -65,8 +58,6 @@ function App() {
   };
 
   const handleRemoveItem = (product) => {
-    console.log('handleRemoveItem called');
-
     const cartItemsUpdated = cloneDeep(cartItems);
 
     for (let i = 0; i < cartItemsUpdated.length; i += 1) {
@@ -79,8 +70,6 @@ function App() {
   };
 
   const getNumberOfCartItems = () => {
-    console.log('getNumberOfCartItems called');
-
     let cartItemsLength = 0;
     cartItems.forEach((item) => {
       cartItemsLength += item.quantity;
@@ -89,8 +78,6 @@ function App() {
   };
 
   const getTotalPrice = () => {
-    console.log('getTotalPrice called');
-
     let totalPrice = 0;
     cartItems.forEach((item) => {
       totalPrice += item.price * item.quantity;

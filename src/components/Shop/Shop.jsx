@@ -15,9 +15,21 @@ function Shop({ handleAddToCart }) {
             {product.name.charAt(0).toUpperCase() + product.name.slice(1)}
           </p>
           <p className="prudct-price">${product.price}</p>
+          <input
+            id={`quantity-input-${product.id}`}
+            className="quantity-input"
+            type="number"
+            defaultValue="1"
+            min="1"
+          />
           <button
             className="add-to-cart-button"
-            onClick={() => handleAddToCart(product)}
+            onClick={() =>
+              handleAddToCart(
+                product,
+                document.getElementById(`quantity-input-${product.id}`).value
+              )
+            }
             type="button"
           >
             Add to cart
