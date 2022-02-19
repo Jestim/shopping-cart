@@ -57,11 +57,11 @@ function Cart({
           </div>
         ))}
       </div>
-      <div className="total-price-container">
-        {cartItems.length !== 0 ? (
+      {cartItems.length !== 0 ? (
+        <div className="total-price-container">
           <p>{`Total price: $${getTotalPrice()}`}</p>
-        ) : null}
-      </div>
+        </div>
+      ) : null}
     </div>
   );
 }

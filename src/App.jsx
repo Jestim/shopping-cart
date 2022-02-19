@@ -10,7 +10,9 @@ import './app.css';
 function App() {
   const [cartItems, setCartItems] = useState([]);
 
-  const handleAddToCart = (product, quantityInput) => {
+  const handleAddToCart = (e, product, quantityInput) => {
+    console.log('handleAddToCart called');
+    e.preventDefault();
     const quantity = toInteger(quantityInput);
 
     const cartItemsUpdated = cloneDeep(cartItems);
@@ -87,7 +89,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div>
+      <div className="main-container">
         <Header cartItemsLength={getNumberOfCartItems()} />
         <Routes>
           <Route path="/" element={<Home />} />

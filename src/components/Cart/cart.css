@@ -1,9 +1,10 @@
 .cart {
-    width: 100%;
-    margin: auto;
+    margin: 0 15% 0 15%;
+    padding-top: 116px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: white;
 }
 
 .cart-header {
@@ -11,9 +12,6 @@
 }
 
 .cart-items {
-    width: 35%;
-    height: auto;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,7 +21,6 @@
     width: 100%;
     height: auto;
     margin: 2rem 0 0 0;
-    overflow: hidden;
     display: flex;
     align-items: center;
 }
@@ -87,4 +84,15 @@
 .item-buttons {
     display: flex;
     justify-content: center;
+}
+
+.total-price-container {
+    width: 70%;
+    margin-top: 1rem;
+    padding: 1rem;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
 }

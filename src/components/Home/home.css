@@ -1,3 +1,10 @@
+.home {
+    height: 100%;
+    margin: 0 15% 0 15%;
+    padding-top: 116px;
+    background-color: white;
+}
+
 .home-header {
     text-align: center;
 }
